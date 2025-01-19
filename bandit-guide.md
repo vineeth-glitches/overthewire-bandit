@@ -48,5 +48,25 @@ find ./ -maxdepth 3 -type f -size 1033c -exec ls -lh {} \;|tee /dev/tty | awk '{
 find . -name "*.txt" | tee file_list.txt | xargs cat
 ```
 **Easter Egg** - using tee /dev/tty displays it on the terminal
-Save progress - HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
-### [Level 6 -> Level 7](
+### [Level 6 -> Level 7](https://overthewire.org/wargames/bandit/bandit7.html)
+```bash
+find / -user bandit7 -group bandit6 -size 33c 2> /dev/null | xargs cat
+```
+### [Level 7 -> Level 8](https://overthewire.org/wargames/bandit/bandit8.html)
+```bash
+grep "millionth" data.txt | awk '{print$2}'
+```
+### [Level 8 -> Level 9](https://overthewire.org/wargames/bandit/bandit9.html)
+```bash
+sort data.txt | uniq -u
+```
+### [Level 9 -> Level 10](https://overthewire.org/wargames/bandit/bandit10.html)
+```bash
+strings data.txt | grep === | tail -1 | awk '{print$2}'
+```
+### [Level 10 -> Level 11](https://overthewire.org/wargames/bandit/bandit11.html)
+```bash
+base64 -d data.txt | awk '{print$4}'
+```
+
+Save progress - dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
