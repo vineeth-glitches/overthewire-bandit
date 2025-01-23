@@ -70,3 +70,37 @@ base64 -d data.txt | awk '{print$4}'
 ```
 
 Save progress - dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+### [Level 11 -> Level 12](https://overthewire.org/wargames/bandit/bandit12.html)
+```bash
+cat data.txt | tr '[a-z][A-Z]' '[n-za-m][N-ZA-M]'
+```
+
+### [Level 12 -> Level 13](https://overthewire.org/wargames/bandit/bandit13.html)
+Convert the hex dump file to binary
+```bash
+xxd -r data.txt
+```
+After this, repeated decompression from gzip, bzip2 and tar is required to extract the ASCII text file which will ultimately contain the password
+```bash
+gzip -d data.gz
+bzip2 -d data.bz2
+tar -xvf data.tar
+```
+
+**Easter Egg -** mktemp -d randomXXX will make a temporary directory
+
+### [Level 13 -> Level 14](https://overthewire.org/wargames/bandit/bandit14.html)
+```bash
+ssh -i ssh.private bandit14@bandit.labs.overthewire.org -p 2220
+```
+
+### [Level 14 -> Level 15](https://overthewire.org/wargames/bandit/bandit15.html)
+```bash
+cat /etc/bandit_pass/bandit14 | nc localhost 30000
+```
+
+### [Level 15 -> Level 16](https://overthewire.org/wargames/bandit/bandit16.html)
+```bash
+openssl s_client -connect localhost:30001
+```
